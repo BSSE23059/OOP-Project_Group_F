@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Home/OneDrive/Desktop/jj/OOP-Project_Group_F
+# Install script for directory: C:/Users/Home/OneDrive/Desktop/ITU-S/OOP-Project_Group_F
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Home/OneDrive/Desktop/jj/OOP-Project_Group_F/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Home/OneDrive/Desktop/ITU-S/OOP-Project_Group_F/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,3 +1,3 @@
-C:/Users/Home/OneDrive/Desktop/jj/OOP-Project_Group_F/cmake-build-debug/CMakeFiles/OOP_Project_Group_F.dir
-C:/Users/Home/OneDrive/Desktop/jj/OOP-Project_Group_F/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Home/OneDrive/Desktop/jj/OOP-Project_Group_F/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Home/OneDrive/Desktop/ITU-S/OOP-Project_Group_F/cmake-build-debug/CMakeFiles/OOP_Project_Group_F.dir
+C:/Users/Home/OneDrive/Desktop/ITU-S/OOP-Project_Group_F/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Home/OneDrive/Desktop/ITU-S/OOP-Project_Group_F/cmake-build-debug/CMakeFiles/rebuild_cache.dir

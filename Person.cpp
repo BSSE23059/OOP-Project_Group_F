@@ -7,19 +7,19 @@ void Person::setId(const string &id) {
 }
 
 void Person::setPersonName(const string &perName) {
-    this -> personName = perName;
+     personName = perName;
 }
 
 void Person::setAge(int perAge) {
-    this -> age = perAge;
+     age = perAge;
 }
 
 void Person::setGender(bool perGender) {
-    this -> gender = perGender;
+     gender = perGender;
 }
 
 void Person::setContact(const string &perContact) {
-    this -> contact = perContact;
+     contact = perContact;
 }
 
 const string &Person::getId() const {

@@ -9,4 +9,7 @@ add_executable(OOP_Project_Group_F
         Person.cpp
         Person.h
         Voter.cpp
-        Voter.h)
+        Voter.h
+        main.cpp
+        Party.cpp
+        Candidate.cpp)
