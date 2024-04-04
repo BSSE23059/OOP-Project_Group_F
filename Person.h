@@ -26,6 +26,7 @@ public:
     const string &getId() const;
     virtual void castVote(const Candidate& candidate) = 0;
 
+
 };
 
 

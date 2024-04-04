@@ -41,3 +41,4 @@ bool Person::isGender() const {
 const string &Person::getContact() const {
     return contact;
 }
+

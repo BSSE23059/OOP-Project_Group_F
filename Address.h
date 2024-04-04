@@ -8,11 +8,7 @@ class Address {
 private:
     string province;
     string district;
-    string unionCouncil;
-    string block;
+    string unionCouncil;//PK-LHR-1234
     int houseNum;
-    int streetNum;
+    int blockNum;
 };
-
-
-#endif //OOP_PROJECT_GROUP_F_ADDRESS_H

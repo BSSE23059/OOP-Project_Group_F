@@ -31,4 +31,5 @@ void Voter::setTimeOfVote(time_t currentTime) {
 void Voter::castVote(const Candidate &candidate) {
     // We'd see if this voter exists in the same sector as the candidate,
     // If they had same sectors than we would enable voter to vote for him.
+
 }
