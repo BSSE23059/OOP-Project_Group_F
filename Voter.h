@@ -12,6 +12,7 @@ private:
     bool isRegistered;
     bool castStatus;
     time_t timeOfVote;
+
 public:
     Voter(const string& voterName, const string& voterId, int voterAge, bool voterGender, const string& contact);
     void setPollingStationId(const string &pollingStationId);
