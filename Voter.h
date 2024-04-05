@@ -19,7 +19,7 @@ public:
     void setIsRegistered(bool voterIsRegistered);
     void setCastStatus(bool voterCastStatus);
     void setTimeOfVote(time_t currentTime);
-    void castVote(const Candidate& candidate) override;
+//    void castVote(const Candidate& candidate) override;
 
 
 };

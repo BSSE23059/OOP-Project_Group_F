@@ -13,7 +13,7 @@ private:
     int houseNum;
     int streetNum;
 public:
-    Address();
+
     Address(string province,string district,string uncouncil,string block,int housenm,int streetnm);
     void setprovice(string prvn);
     void set_disrict(string dist);

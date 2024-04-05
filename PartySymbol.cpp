@@ -1,7 +1,7 @@
 #include "PartySymbol.h"
 
 PartySymbol::PartySymbol() {
-    partysymbol = " ";
+    partysymbol = "";
 }
 
 void PartySymbol::set_partysymbol(std::string pn) {

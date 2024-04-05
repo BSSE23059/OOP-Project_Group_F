@@ -1,7 +1,6 @@
 #ifndef OOP_PROJECT_GROUP_F_PERSON_H
 #define OOP_PROJECT_GROUP_F_PERSON_H
 #include <iostream>
-#include "Candidate.h"
 using namespace std;
 
 class Person {
@@ -24,7 +23,7 @@ public:
     int getAge() const;
     const string &getPersonName() const;
     const string &getId() const;
-    virtual void castVote(const Candidate& candidate) = 0;
+//    virtual void castVote(const Candidate& candidate) = 0;
 
 
 };

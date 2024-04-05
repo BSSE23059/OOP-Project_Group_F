@@ -1,6 +1,4 @@
-//
-// Created by Home on 4/4/2024.
-//
+
 #ifndef OOP_PROJECT_GROUP_F_PARTY_H
 #define OOP_PROJECT_GROUP_F_PARTY_H
 #include <vector>
@@ -8,27 +6,28 @@
 #include "PartySymbol.h"
 #include "Address.h"
 #include "Candidate.h"
+
+
 class Party {
 private:
     Person *p;
     string name;
-    string leadername;
+    string leaderName;
     PartySymbol partySymbol;
     vector<Candidate> candidate_participating;
-    // vector<seats>seatswon    (add when made seats.h and cpp)
-    Address address_of_headofquaters;
+    // vector<seats>seatsWon    (add when made seats.h and cpp)
+    Address address_of_headQuarters;
 public:
-   Party();
    Party(string nm,string leadernm,PartySymbol partysym,Address address_of_hoq);
-   void set_partyname(string n);
-   void set_leadername(string ln);
-   string get_partyname();
-   string get_leadername();
-   void add_candiadates();
+   void set_partyName(string n);
+   void set_leaderName(string ln);
+   string get_partyName();
+   string get_leaderName();
+   void add_candidates(const Candidate& candidate);
    void remove_candidates(string n);
-   void get_candaiates();
+   void get_candidates();
     void set_partsymbol();
- //  void get_seatswon(vector<Seats>)   ( add when implement seats.h and seats.cpp)
+ //  void get_seatsWon(vector<Seats>)   ( add when implement seats.h and seats.cpp)
 
 };
 

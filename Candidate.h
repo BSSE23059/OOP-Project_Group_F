@@ -4,6 +4,7 @@
 #include "Voter.h"
 using namespace std;
 
+
 class Candidate : public Voter{
 
 };
