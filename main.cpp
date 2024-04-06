@@ -2,6 +2,7 @@
 #include "Sector.cpp"
 #include "FederalSector.cpp"
 #include "ProvincialSector.cpp"
+#include "SectorProvider.cpp"
 using namespace std;
 
 int main()
@@ -10,10 +11,10 @@ int main()
     cout << NA1.getCode() << endl;
     FederalSector NA2("Islamabad");
     cout << NA2.getCode() << endl;
-    ProvincialSector PP1("Lahore","Punjab");
-    cout << PP1.getCode() << endl;
-    ProvincialSector PS1("Karachi","Sindh");
-    cout << PS1.getCode() << endl;
+    SectorProvider *sectorProvider = SectorProvider::getInstance();
+
+    sectorProvider->addFederalSector(NA1);
+    sectorProvider->addFederalSector(NA2);
 
     return 0;
 }
