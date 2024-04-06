@@ -6,11 +6,11 @@
 using namespace std;
 
 // SectorProvider is a Singleton class to maintain the record of sectors in one class and to
-// maintain a global point of access
+// maintain a global point of acc
 class SectorProvider {
 private:
     static SectorProvider* instance;
-    vector <FederalSector> federalSectors;
+    unordered_map<int,string> sectors;
     SectorProvider();
 public:
     static SectorProvider* getInstance();

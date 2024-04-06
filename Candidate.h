@@ -9,7 +9,7 @@ using namespace std;
 class Candidate : public Voter{
 private:
     string partyName;
-
+    string sector;
 public:
     const string &getPartyName() const;
 

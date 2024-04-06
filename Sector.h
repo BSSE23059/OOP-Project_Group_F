@@ -13,13 +13,8 @@ private:
     string district;
     vector <UnionCouncil> unionCouncils;
     vector<Candidate> candidates;
-protected:
-    string code;
-    static int sectorCode;
 public:
     Sector();
-    string getCode();
-    void setCode(string strCode);
     vector<Candidate>& getCandidates();
     const string &getDistrict() const;
     void setDistrict(const string &sectorDistrict);

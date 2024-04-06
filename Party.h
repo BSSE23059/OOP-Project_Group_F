@@ -26,7 +26,7 @@ public:
    void add_candidates(const Candidate& candidate);
    void remove_candidates(string n);
    void get_candidates();
-    void set_partsymbol();
+   void set_partsymbol();
  //  void get_seatsWon(vector<Seats>)   ( add when implement seats.h and seats.cpp)
 
 };

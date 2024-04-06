@@ -1,7 +1,9 @@
 #include "FederalSector.h"
 
+int FederalSector::sectorCode = 0;
+
 FederalSector::FederalSector(const string& sectorDistrict) {
-    setCode("NA-");
+    code = "NA-";
     sectorCode++;
     code = code + to_string(sectorCode);
     setDistrict(sectorDistrict);
@@ -16,4 +18,8 @@ void FederalSector::nominateCandidate(const Candidate &candidate) {
             cout << "Your Party has already nominated a candidate in this sector." << endl;
         }
     }
+}
+
+const string &FederalSector::getCode() const {
+    return code;
 }

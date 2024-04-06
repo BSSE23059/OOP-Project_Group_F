@@ -6,8 +6,12 @@ using namespace std;
 
 
 class FederalSector : public Sector{
+private:
+    string code;
+    static int sectorCode;
 public:
     explicit FederalSector(const string& sectorDistrict);
+    const string &getCode() const;
     void nominateCandidate(const Candidate& candidate) override;
 };
 
