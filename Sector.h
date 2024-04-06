@@ -1,4 +1,3 @@
-
 #ifndef OOP_PROJECT_GROUP_F_1_SECTOR_H
 #define OOP_PROJECT_GROUP_F_1_SECTOR_H
 #include<iostream>
@@ -11,7 +10,7 @@ using namespace std;
 
 class Sector {
 private:
-    bool candidateAdded;
+    string district;
     vector <UnionCouncil> unionCouncils;
     vector<Candidate> candidates;
 protected:
@@ -21,11 +20,10 @@ public:
     Sector();
     string getCode();
     void setCode(string strCode);
-    void setSectorCode(int secCode);
     vector<Candidate>& getCandidates();
-    void setCandidateAdded(bool canAdded);
+    const string &getDistrict() const;
+    void setDistrict(const string &sectorDistrict);
     virtual void nominateCandidate(const Candidate& candidate) = 0;
-
 };
 
 

@@ -2,7 +2,7 @@
 #define OOP_PROJECT_GROUP_F_VOTER_H
 #include <iostream>
 #include "Person.h"
-#include "time.h"
+#include <ctime>
 using namespace std;
 
 class Voter : public Person{

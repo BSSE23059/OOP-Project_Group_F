@@ -7,7 +7,7 @@ using namespace std;
 
 class FederalSector : public Sector{
 public:
-    FederalSector();
+    FederalSector(const string& sectorDistrict);
     void nominateCandidate(const Candidate& candidate) override;
 };
 

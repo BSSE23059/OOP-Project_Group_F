@@ -16,14 +16,15 @@ vector<Candidate> &Sector::getCandidates() {
     return candidates;
 }
 
-void Sector::setCandidateAdded(bool canAdded) {
-    candidateAdded = canAdded;
-}
-
 void Sector::setCode(std::string strCode) {
     code = std::move(strCode);
 }
 
-void Sector::setSectorCode(int secCode) {
-    sectorCode = secCode;
+
+const string &Sector::getDistrict() const {
+    return district;
+}
+
+void Sector::setDistrict(const string &sectorDistrict) {
+    district = sectorDistrict;
 }

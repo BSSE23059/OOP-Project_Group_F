@@ -1,15 +1,19 @@
 #include "FederalSector.h"
 
+FederalSector::FederalSector(const string& sectorDistrict) {
 
-FederalSector::FederalSector() {
     setCode("NA-");
     sectorCode++;
     code = code + to_string(sectorCode);
-
 }
 
 void FederalSector::nominateCandidate(const Candidate &candidate) {
-    getCandidates().push_back(candidate);
-    setCandidateAdded(true);
-    cout << "Your candidate has been successfully added." << endl;
+    for(int i=0;i<getCandidates().size();i++){
+        if(getCandidates()[i].getPartyName() != candidate.getPartyName()){
+            getCandidates().push_back(candidate);
+            cout << "Your candidate has been successfully added." << endl;
+        } else {
+            cout << "Your Party has already nominated a candidate in this sector." << endl;
+        }
+    }
 }
