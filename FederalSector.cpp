@@ -1,10 +1,10 @@
 #include "FederalSector.h"
 
 FederalSector::FederalSector(const string& sectorDistrict) {
-
     setCode("NA-");
     sectorCode++;
     code = code + to_string(sectorCode);
+    setDistrict(sectorDistrict);
 }
 
 void FederalSector::nominateCandidate(const Candidate &candidate) {
