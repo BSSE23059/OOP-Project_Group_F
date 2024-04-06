@@ -5,6 +5,8 @@
 #include "FederalSector.h"
 using namespace std;
 
+// SectorProvider is a Singleton class to maintain the record of sectors in one class and to
+// maintain a global point of access
 class SectorProvider {
 private:
     static SectorProvider* instance;
