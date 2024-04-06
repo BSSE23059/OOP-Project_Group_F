@@ -4,7 +4,6 @@
 #include <vector>
 #include "nlohmann/json.hpp"
 #include "FederalSector.h"
-#include "Sectors/federalSectors.json"
 #include <fstream>
 using json = nlohmann::json;
 using namespace std;
@@ -14,9 +13,10 @@ using namespace std;
 class SectorProvider {
 private:
     static SectorProvider* instance;
-    vector<FederalSector> federalSectors;
+
     SectorProvider();
 public:
+    vector<FederalSector> federalSectors;
     static SectorProvider* getInstance();
     void addFederalSector(FederalSector& federalSector);
     static void addFederalSectorToJson(FederalSector& federalSector);

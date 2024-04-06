@@ -2,7 +2,7 @@
 
 SectorProvider *SectorProvider::instance = nullptr;
 
-SectorProvider::SectorProvider() {}
+SectorProvider::SectorProvider() = default;
 
 SectorProvider *SectorProvider::getInstance() {
     if(instance == nullptr){
@@ -12,22 +12,17 @@ SectorProvider *SectorProvider::getInstance() {
 }
 
 void SectorProvider::addFederalSector(FederalSector &federalSector) {
+    federalSectors.push_back(federalSector);
+    SectorProvider::addFederalSectorToJson(federalSector);
+    cout << federalSector.getCode() << " has been successfully added." << endl;
 
-    for(int i=0;i<federalSectors.size();i++){
-        if(federalSectors[i].getCode() != federalSector.getCode()){
-            federalSectors.push_back(federalSector);
-            SectorProvider::addFederalSectorToJson(federalSector);
-            cout << federalSector.getCode() << " has been successfully added." << endl;
-        } else {
-            cout << federalSector.getCode() << " already exists." << endl;
-        }
-    }
 }
 
 void SectorProvider::addFederalSectorToJson(FederalSector& federalSector){
-    ofstream putSector("Sectors/federalSectors.json");
+
     json putFederalSectors;
     putFederalSectors["Sector Code"] = federalSector.getCode();
+    ofstream putSector("federalSectors.json");
     putSector << putFederalSectors << endl;
     putSector.close();
 

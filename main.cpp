@@ -15,6 +15,9 @@ int main()
 
     sectorProvider->addFederalSector(NA1);
     sectorProvider->addFederalSector(NA2);
+    for(const auto & federalSector : sectorProvider->federalSectors){
+        cout << federalSector.getCode() << endl;
+    }
 
     return 0;
 }
