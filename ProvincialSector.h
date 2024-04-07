@@ -8,7 +8,10 @@ class ProvincialSector : public Sector{
 private:
     string provinceName;
     string code;
-    static int sectorCode;
+    static int kpkSectorCode;
+    static int punjabSectorCode;
+    static int sindhSectorCode;
+    static int baloachistanSectorCode;
 public:
     virtual ~ProvincialSector();
 

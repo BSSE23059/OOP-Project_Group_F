@@ -1,23 +1,28 @@
 #include "ProvincialSector.h"
 
-int ProvincialSector::sectorCode = 0;
+int ProvincialSector::punjabSectorCode = 0;
+int ProvincialSector::kpkSectorCode = 0;
+int ProvincialSector::baloachistanSectorCode = 0;
+int ProvincialSector::sindhSectorCode = 0;
 
 ProvincialSector::ProvincialSector(const std::string &sectorDistrict, const string& proName) {
     if(proName == "Punjab"){
         code = "PP-";
-        sectorCode++;
+        punjabSectorCode++;
+        code = code + to_string(punjabSectorCode);
     } else if(proName == "Sindh"){
         code = "PS-";
-        sectorCode++;
+        sindhSectorCode++;
+        code = code + to_string(sindhSectorCode);
     } else if(proName == "Khyber Pakhtunkhwa"){
         code = "PK-";
-        sectorCode++;
+        kpkSectorCode++;
+        code = code + to_string(kpkSectorCode);
     } else if(proName == "Baloachistan"){
         code = "PB-";
-        sectorCode++;
+        baloachistanSectorCode++;
+        code = code + to_string(baloachistanSectorCode);
     }
-
-    code = code + to_string(sectorCode);
     setDistrict(sectorDistrict);
 }
 
