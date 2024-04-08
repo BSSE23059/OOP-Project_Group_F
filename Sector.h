@@ -19,6 +19,8 @@ public:
     const string &getDistrict() const;
     void setDistrict(const string &sectorDistrict);
     virtual void nominateCandidate(const Candidate& candidate) = 0;
+    virtual ~Sector();
+
 };
 
 

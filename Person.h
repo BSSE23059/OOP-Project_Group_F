@@ -1,6 +1,7 @@
 #ifndef OOP_PROJECT_GROUP_F_PERSON_H
 #define OOP_PROJECT_GROUP_F_PERSON_H
 #include <iostream>
+#include "Address.h"
 using namespace std;
 
 class Person {
@@ -10,6 +11,7 @@ private:
     int age;
     bool gender;
     string contact;
+    Address address;
 
 public:
     Person();

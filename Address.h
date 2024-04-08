@@ -14,12 +14,12 @@ private:
     int streetNum;
 public:
 
-    Address(string province,string district,string uncouncil,string block,int housenm,int streetnm);
-    void setprovice(string prvn);
-    void set_disrict(string dist);
-    void set_Unioncouncil(string uncoun);
-    void set_block(string blck);
-    void  set_HouseNum(int hnum);
+    Address(string province,string district,string perUnionCouncil,string block,int houseNum,int streetNum);
+    void setProvice(string perProvince);
+    void setDisrict(string dist);
+    void setUnionCouncil(string unionCoun);
+    void setBlock(string blck);
+    void  setHouseNum(int hnum);
     void  set_StreetNum(int stnum);
     string get_provice();
     string get_disrict();

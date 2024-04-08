@@ -16,3 +16,7 @@ const string &Sector::getDistrict() const {
 void Sector::setDistrict(const string &sectorDistrict) {
     district = sectorDistrict;
 }
+
+Sector::~Sector() {
+
+}

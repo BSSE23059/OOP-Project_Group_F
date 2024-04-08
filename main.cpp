@@ -1,5 +1,6 @@
 #include<iostream>
 #include "Sector.cpp"
+#include "Province.h"
 #include "FederalSector.cpp"
 #include "ProvincialSector.cpp"
 #include "SectorProvider.cpp"
@@ -18,6 +19,9 @@ int main()
     for(const auto & federalSector : sectorProvider->federalSectors){
         cout << federalSector.getCode() << endl;
     }
+
+    Province punjab;
+
 
     return 0;
 }
