@@ -1,43 +1,25 @@
-
-
-
 #include "Voter.h"
+#include "Login.h"
 
-Voter::Voter(const string& voterName, int voterAge, string voterGender, const string& id, const string& cnic) : Person(voterName, voterAge, voterGender), voterID(id), CNIC(cnic) {}
+Voter::Voter(const string& personName, int personAge, const string& personGender, const string& voterId, const string& voterCnic, const string& voterPassword)
+        : Person(personName, personAge, personGender), id(voterId), cnic(voterCnic), hasVoted(false), password(voterPassword) {}
 
-Voter::~Voter() {}
-
-void Voter::voteForCandidate(Candidate* candidate) {
-    if (candidate != nullptr && !hasVoted()) {
-        candidate->castVote();
-        cout << "Vote cast successfully for candidate: " << candidate->getName() << endl;
-    } else {
-        cout << "Invalid candidate or already voted." << endl;
-    }
+const string& Voter::getId() const {
+    return id;
 }
 
-const string& Voter::getVoterID() const {
-    return voterID;
+const string& Voter::getCnic() const {
+    return cnic;
 }
 
-void Voter::setVoterID(const string& id) {
-    voterID = id;
+bool Voter::getHasVoted() const {
+    return hasVoted;
 }
 
-const string& Voter::getCNIC() const {
-    return CNIC;
+void Voter::setHasVoted(bool voted) {
+    hasVoted = voted;
 }
 
-void Voter::setCNIC(const string& cnic) {
-    CNIC = cnic;
+bool Voter::login(const string& inputPassword) {
+    return Login::authenticate(inputPassword, password);
 }
-
-bool Voter::hasVoted() {
-    return false;
-}
-
-void Voter::setVoted(bool b) {
-    return;
-}
-
-

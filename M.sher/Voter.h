@@ -1,26 +1,29 @@
 #ifndef PROJECT_OOP_VOTER_H
 #define PROJECT_OOP_VOTER_H
-#include <iostream>
+#include <string>
 #include "Person.h"
-#include "Candidate.h"
 
 class Voter : public Person {
 private:
-    string voterID;
-    string CNIC;
+    string id;
+    string cnic;
+    bool hasVoted;
+    string password;
+    string selectedCandidate;
 
 public:
-    bool eligibleToVote;
-    Voter(const string& voterName, int voterAge, string voterGender, const string& id, const string& cnic);
-    void voteForCandidate(Candidate* candidate);
-    const string& getVoterID() const;
-    void setVoterID(const string& id);
-    const string& getCNIC() const;
-    void setCNIC(const string& cnic);
-    bool hasVoted();
-    bool isEligibleToVote() const { return age >= 18; }
-    ~Voter();
-    void setVoted(bool b);
+    Voter(const string& personName, int personAge, const string& personGender, const string& voterId, const string& voterCnic, const string& voterPassword);
+    const string& getId() const;
+    const string& getCnic() const;
+    bool getHasVoted() const;
+    void setHasVoted(bool voted);
+    bool login(const string& inputPassword);
+    const string& getSelectedCandidate() const {
+        return selectedCandidate;
+    }
+    void setSelectedCandidate(const string& candidateName) {
+        selectedCandidate = candidateName;
+    }
 };
 
-#endif
+#endif // PROJECT_OOP_VOTER_H

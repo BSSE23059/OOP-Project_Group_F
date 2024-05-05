@@ -18,4 +18,10 @@ add_executable(PROJECT_OOP main.cpp
         Voter.h
         Voter.cpp
         Result.h
-        Result.cpp)
+        Result.cpp
+        management.h
+        PersonalDetails.h
+        Login.cpp
+        Login.h
+        Login.h
+        Login.cpp)

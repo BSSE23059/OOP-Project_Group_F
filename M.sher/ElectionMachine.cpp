@@ -1,13 +1,12 @@
-
-
-
 #include "ElectionMachine.h"
+#include "Voter.h"
+#include "Candidate.h"
 #include "Result.h"
+#include <iostream>
 #include <algorithm>
 
-Candidate *getCandidateByName(string basicString);
-
-ElectionMachine::ElectionMachine(const vector<Voter*>& voters, const vector<Candidate*>& candidates) : phase(""), voterList(voters), candidateList(candidates) {}
+ElectionMachine::ElectionMachine(const vector<Voter*>& voters, const vector<Candidate*>& candidates)
+        : phase(""), voterList(voters), candidateList(candidates), result(Result::getInstance()) {}
 
 void ElectionMachine::conductElectionPhase() {
     cout << "Enter the phase of the election: ";
@@ -22,26 +21,44 @@ void ElectionMachine::displayCandidatesForVoting() {
     }
 }
 
-void ElectionMachine::recordVote(Voter* voter, string candidateName) {
-    // ...
-    // Implement vote recording logic here
-    auto candidate = find_if(candidateList.begin(), candidateList.end(), [&candidateName](const Candidate* c) { return (c->getName()) == (candidateName); });
-    if (candidate != candidateList.end()) {
-        (*candidate)->castVote();
-        voter->setVoted(true);
-        Result& result = Result::getInstance();
-        result.positionVotesMap[(*candidate)->getPosition()]++;
-        cout << "Vote recorded for " << (*candidate)->getName() << endl;
+void ElectionMachine::recordVote(Voter* voter, const string& candidateName) {
+    Candidate* foundCandidate = nullptr;
+    for (Candidate* candidate : candidateList) {
+        if (candidate->getName() == candidateName) {
+            foundCandidate = candidate;
+            break;
+        }
+    }
+    if (foundCandidate != nullptr) {
+        foundCandidate->incrementVoteCount();
+        voter->setSelectedCandidate(candidateName);
+        voter->setHasVoted(true);
+        cout << "Selected candidate name: " << voter->getSelectedCandidate() << endl;
+        cout << "Vote recorded for " << foundCandidate->getName() << endl;
     } else {
         cout << "Candidate is not valid." << endl;
     }
 }
 
 void ElectionMachine::countVotes() {
-    cout << "Vote count for " << phase << " phase:" << endl;
-    for (const auto& candidate : candidateList) {
-        cout << candidate->getName() << " - Votes: " << candidate->getVoteCount() << endl;
+    // Initialize voteCounts vector with each candidate's vote count set to 0
+    voteCounts.assign(candidateList.size(), 0);
+    // Count votes
+    for (const auto& voter : voterList) {
+        const string& candidateName = voter->getSelectedCandidate();
+        if (!candidateName.empty()) {
+            auto it = find_if(candidateList.begin(), candidateList.end(), [&](const Candidate* candidate) {
+                return candidate->getName() == candidateName;
+            });
+            if (it != candidateList.end()) {
+                int index = distance(candidateList.begin(), it);
+                voteCounts[index]++;
+            }
+        }
+    }
+    // Optionally, you can display the vote counts for each candidate
+    for (size_t i = 0; i < voteCounts.size(); ++i) {
+        cout << candidateList[i]->getName() << ": " << voteCounts[i] << " votes" << endl;
     }
 }
-
 

@@ -1,6 +1,6 @@
 #ifndef PROJECT_OOP_PERSONALDETAILS_H
 #define PROJECT_OOP_PERSONALDETAILS_H
-using namespace std;
+
 class PersonalDetails {
 private:
     int carValue;
@@ -10,9 +10,11 @@ private:
 
 public:
     PersonalDetails(int car, int house, int balance, int land);
+
     bool operator>(int value) const;
     void displayDetails() const;
     int getTotalAssets() const;
+
     void updateCarValue(int value);
     void updateHouseValue(int value);
     void updateBankBalance(int value);

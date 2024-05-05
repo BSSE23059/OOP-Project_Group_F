@@ -1,41 +1,66 @@
 #include "Result.h"
-#include <iostream>
-#include <fstream>
-void Result::showResult() {
-    cout << "Election Results:" << endl;
-    for (const auto& pair : positionVotesMap) {
-        string position = pair.first;
-        int votes = pair.second;
-        string winner = "";
-        int maxVotes = 0;
-        for (const auto& candidate : candidateList) {
-            if (candidate->getPosition() == position && candidate->getVoteCount() > maxVotes) {
-                maxVotes = candidate->getVoteCount();
-                winner = candidate->getName();
-            }
-        }
-        cout << "Position: " << position << endl;
-       cout << "Winner: " << winner << " with " << maxVotes << " votes" << endl;
+
+
+
+Result* Result::instance = nullptr;
+
+Result::Result() : presidentVotes(0), vicePresidentVotes(0), secretaryVotes(0), treasurerVotes(0) {}
+
+Result* Result::getInstance() {
+    if (instance == nullptr) {
+        instance = new Result();
+    }
+    return instance;
+}
+
+void Result::updatePresidentVotes(int votes) {
+    presidentVotes += votes;
+}
+
+void Result::updateVicePresidentVotes(int votes) {
+    vicePresidentVotes += votes;
+}
+
+void Result::updateSecretaryVotes(int votes) {
+    secretaryVotes += votes;
+}
+
+void Result::updateTreasurerVotes(int votes) {
+    treasurerVotes += votes;
+}
+
+int Result::getPresidentVotes() const {
+    return presidentVotes;
+}
+
+int Result::getVicePresidentVotes() const {
+    return vicePresidentVotes;
+}
+
+int Result::getSecretaryVotes() const {
+    return secretaryVotes;
+}
+
+int Result::getTreasurerVotes() const {
+    return treasurerVotes;
+}
+
+void Result::incrementVoteCount(const string& position) {
+    if (position == "President") {
+        updatePresidentVotes(1);
+    } else if (position == "Vice President") {
+        updateVicePresidentVotes(1);
+    } else if (position == "Secretary") {
+        updateSecretaryVotes(1);
+    } else if (position == "Treasurer") {
+        updateTreasurerVotes(1);
     }
 }
 
-
-
-
-
-
-//void Result::storeResult(const std::map<std::string, int> &positionVotesMap) {
-//    std::ofstream outputFile("election_results.txt");
-//
-//    if (outputFile.is_open()) {
-//        outputFile << "Election Results:" << std::endl;
-//        for (const auto& pair : positionVotesMap) {
-//            outputFile << "Position: " << pair.first << " - Votes: " << pair.second << std::endl;
-//        }
-//        outputFile.close();
-//        std::cout << "Results stored successfully in 'election_results.txt'." << std::endl;
-//    } else {
-//        std::cerr << "Unable to open file for storing results." << std::endl;
-//    }
-//}
-//
+void Result::showResult() const {
+    cout << "Election Results:\n";
+    cout << "President: " << presidentVotes << " votes\n";
+    cout << "Vice President: " << vicePresidentVotes << " votes\n";
+    cout << "Secretary: " << secretaryVotes << " votes\n";
+    cout << "Treasurer: " << treasurerVotes << " votes\n";
+}

@@ -1,19 +1,16 @@
 #include "Person.h"
 
-Person::Person(const string& personName, int personAge, string personGender) : name(personName), age(personAge), gender(personGender) {}
-
-void Person::setName(const string& personName) {
-    name = personName;
-}
+Person::Person(const string& personName, int personAge, const string& personGender)
+        : name(personName), age(personAge), gender(personGender) {}
 
 string Person::getName() const {
     return name;
 }
 
-int Person::getAge() {
+int Person::getAge() const {
     return age;
 }
 
-string Person::getGender() {
+string Person::getGender() const {
     return gender;
 }

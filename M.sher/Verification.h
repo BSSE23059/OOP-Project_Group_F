@@ -3,7 +3,8 @@
 
 #include "Candidate.h"
 #include <vector>
-#include <algorithm>
+#include <string>
+
 class Verification {
 private:
     Candidate* candidate;
@@ -11,12 +12,15 @@ private:
     bool registrationFeeStatus;
     bool taxPaymentStatus;
     vector<string> criminalRecords;
+
 public:
     Verification(Candidate* cand);
+
     void checkRegistrationFeePayment();
     void verifyPersonalDetails();
     void checkTaxPayment();
     void checkCriminalRecord(Candidate* candidate);
+    bool isVerified() const;
 };
 
 #endif // VERIFICATION_H

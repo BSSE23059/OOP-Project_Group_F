@@ -1,3 +1,0 @@
-C:/Users/M.Sher/Documents/GitHub/PROJECT OOP/cmake-build-debug/CMakeFiles/PROJECT_OOP.dir
-C:/Users/M.Sher/Documents/GitHub/PROJECT OOP/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/M.Sher/Documents/GitHub/PROJECT OOP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
